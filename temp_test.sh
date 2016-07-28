@@ -6,11 +6,9 @@ function infinite_loop {
 	while [ 1 ] ; do
 		# Force some computation even if it is useless to actually work the CPU
 
-		echo "Hi"
 		for i in `seq 1 10000`; do
 			echo $((13**99)) 1>/dev/null 2>&1
 		done
-		echo "Hi"
 
 		sleep 6
 	done

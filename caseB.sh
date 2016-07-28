@@ -11,6 +11,7 @@ busctl --allow-interactive-authorization=no call com.atherenergy.HardwareTest /c
 busctl --allow-interactive-authorization=no call com.atherenergy.HardwareTest /com/atherenergy/HardwareTest com.atherenergy.HardwareTest SetIndicatorState s BothIndicatorOn
 sleep  30
 busctl --allow-interactive-authorization=no call com.atherenergy.HardwareTest /com/atherenergy/HardwareTest com.atherenergy.HardwareTest SetIndicatorState s LeftIndicatorOn
+busctl --allow-interactive-authorization=no call com.atherenergy.HardwareTest /com/atherenergy/HardwareTest com.atherenergy.HardwareTest SetHeadLightState s LowBeam
 sleep  30
 busctl --allow-interactive-authorization=no call com.atherenergy.HardwareTest /com/atherenergy/HardwareTest com.atherenergy.HardwareTest SetIndicatorState s RightIndicatorOn
  busctl --allow-interactive-authorization=no call com.atherenergy.HardwareTest /com/atherenergy/HardwareTest com.atherenergy.HardwareTest SetHeadLightState s Blink

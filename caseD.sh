@@ -10,6 +10,9 @@ busctl --allow-interactive-authorization=no call com.atherenergy.HardwareTest /c
 
 while true; do
 
+busctl --allow-interactive-authorization=no call com.atherenergy.HardwareTest /com/atherenergy/HardwareTest com.atherenergy.HardwareTest SetHornStatus b true
+sleep 4
+
 busctl --allow-interactive-authorization=no call com.atherenergy.HardwareTest /com/atherenergy/HardwareTest com.atherenergy.HardwareTest SetHornStatus b f
 busctl --allow-interactive-authorization=no call com.atherenergy.HardwareTest /com/atherenergy/HardwareTest com.atherenergy.HardwareTest SetThrottle  a{ss} 2 type can rpm 1000
 sleep  30
