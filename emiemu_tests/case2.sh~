@@ -1,0 +1,16 @@
+#!/bin/bash
+sleep 1
+killall busctl
+echo `date` " test case >> ${BASH_SOURCE[${#BASH_SOURCE[@]} - 1]}"
+echo "Set motor mode to Economy" 
+busctl --allow-interactive-authorization=no  call com.atherenergy.Mcu /com/atherenergy/Mcu com.atherenergy.Mcu SetMotorMode s economy
+
+echo "set GPS on"
+busctl --allow-interactive-authorization=no  call com.atherenergy.Dexter /com/atherenergy/Dexter com.atherenergy.Dexter SetGpsStatus b true
+
+echo "Set motor ping time to 100 ms"
+echo "#TODO : Need to implement command for this"
+
+echo "GPS data ..."
+journalctl -af | grep -i tpv
+

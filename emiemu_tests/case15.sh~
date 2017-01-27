@@ -1,0 +1,13 @@
+#!/bin/bash
+sleep 1
+date
+echo "set GSM tx/rx mode at 900 MH"
+busctl --allow-interactive-authorization=no call com.atherenergy.Dexter /com/atherenergy/Dexter com.atherenergy.Dexter RunGSMCommand s AT+UTEST=3,32,5,5,1,0
+echo "Need to implement"
+
+echo "Head light ON(High beam)"
+busctl --allow-interactive-authorization=no  call com.atherenergy.Mcu /com/atherenergy/Mcu com.atherenergy.Mcu SetHeadLightState s HighBeam
+
+echo " Start charging with CC mode 5A current"
+cansend can1 -i 0x420 0x00 0x00 0xA0 0x40 0x00 0x00 0x00 0x00
+
